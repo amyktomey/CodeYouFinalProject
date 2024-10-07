@@ -5,21 +5,28 @@ namespace CodeYouFinalProject
     public class AdminSeleniumHelpers
     {
         IWebDriver _driver;
-        AdminLocators _AdminLocators;
+        public AdminLocators _adminLocators;
+
+        public AdminSeleniumHelpers(AdminLocators adminLocators)
+        {
+            _adminLocators = adminLocators;
+        }
+
         public AdminSeleniumHelpers(IWebDriver driver)
         {
             _driver = driver;
         }
+
         public void NavigateToURL(string url)
         {
             _driver.Navigate().GoToUrl(url);
         }
         public void Login(string Admin)
         {
-            NavigateToURL(_AdminLocators.pageURL);
-            _AdminLocators.UsernameTextBox.SendKeys(Admin);
-            _AdminLocators.PasswordTextBox.SendKeys("admin123");
-            _AdminLocators.LoginButton.Click();
+            NavigateToURL(_adminLocators.pageURL);
+            _adminLocators.UsernameTextBox.SendKeys(Admin);
+            _adminLocators.PasswordTextBox.SendKeys("admin123");
+            _adminLocators.LoginButton.Click();
         }
     }
 }

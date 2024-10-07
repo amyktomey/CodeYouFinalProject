@@ -22,6 +22,7 @@ namespace CodeYouFinalProject
         [TestMethod]
         public void ClickAdminTab()
         {
+            _driver.Navigate().GoToUrl(_adminLocators.pageURL);
             _adminSeleniumHelpers.Login("Admin");
         }
         [TestCleanup]

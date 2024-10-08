@@ -4,23 +4,20 @@ namespace CodeYouFinalProject
 {
     public class AdminSeleniumHelpers
     {
-        IWebDriver _driver;
+        private IWebDriver _driver;
         public AdminLocators _adminLocators;
-
-        public AdminSeleniumHelpers(AdminLocators adminLocators)
-        {
-            _adminLocators = adminLocators;
-        }
 
         public AdminSeleniumHelpers(IWebDriver driver)
         {
             _driver = driver;
+            _adminLocators = new AdminLocators(_driver);
         }
 
         public void NavigateToURL(string url)
         {
             _driver.Navigate().GoToUrl(url);
         }
+
         public void Login(string Admin)
         {
             NavigateToURL(_adminLocators.pageURL);

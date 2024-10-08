@@ -16,10 +16,10 @@ namespace CodeYouFinalProject
         }
 
         [TestInitialize]
-        public void SetUp(AdminLocators AdminLocators)
+        public void SetUp(AdminLocators adminLocators)
         {
             _driver = new ChromeDriver();
-            _ = new AdminLocators(_driver);
+            adminLocators = new AdminLocators(_driver);
             _adminSeleniumHelpers = new AdminSeleniumHelpers(_driver);
         }
 
@@ -27,7 +27,6 @@ namespace CodeYouFinalProject
         public void ClickAdminTab()
         {
             _adminSeleniumHelpers.Login("Admin");
-
         }
 
 

@@ -13,8 +13,8 @@ namespace CodeYouFinalProject
 
         public string pageURL = "https://opensource-demo.orangehrmlive.com/";
 
-        public IWebElement UsernameTextBox => _driver.FindElement(By.XPath("//input[@placeholder='Username']"));
-        public IWebElement PasswordTextBox => _driver.FindElement(By.XPath("//input[@placeholder='Password']"));
+        public IWebElement UsernameTextBox => _driver.FindElement(By.CssSelector("input[placeholder='Username']"));
+        public IWebElement PasswordTextBox => _driver.FindElement(By.CssSelector("input[placeholder='Password']"));
         public IWebElement LoginButton => _driver.FindElement(By.XPath("//button[normalize-space()='Login']"));
     };
 }

@@ -6,13 +6,13 @@ namespace CodeYouFinalProject
     [TestClass]
     public class UnitTest1
     {
-        public IWebDriver _driver;
-        public AdminLocators _adminLocators;
-        public AdminSeleniumHelpers _adminSeleniumHelpers;
+        public IWebDriver? _driver;
+        public AdminLocators? _adminLocators;
+        public AdminSeleniumHelpers? _adminSeleniumHelpers;
 
         public void SetUp()
         {
-            SetUp(_adminLocators);
+            SetUp(adminLocators: _adminLocators);
         }
 
         [TestInitialize]

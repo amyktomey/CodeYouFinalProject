@@ -21,7 +21,10 @@ namespace CodeYouFinalProject
         }
 
         [TestMethod]
-        public void ClickAdminTab() => _adminSeleniumHelpers.Login("Admin");
+        public void ClickAdminTab()
+        {
+           _adminSeleniumHelpers.Login("Admin");
+        }
 
         [TestCleanup]
         public void Cleanup()

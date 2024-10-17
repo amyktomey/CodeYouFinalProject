@@ -21,9 +21,35 @@ namespace CodeYouFinalProject
         }
 
         [TestMethod]
+        public void LoginToSite()
+        {
+            _adminSeleniumHelpers.Login("Admin");
+        }
+
+        [TestMethod]
         public void ClickAdminTab()
         {
-           _adminSeleniumHelpers.Login("Admin");
+
+        }
+        [TestMethod]
+        public void AdminSearchForUser()
+        {
+        
+        }
+        [TestMethod]
+        public void AdminEditUser()
+        {
+
+        }
+        [TestMethod]
+        public void AdminDeleteUser()
+        {
+
+        }
+        [TestMethod]
+        public void AdminAddNewAdmin()
+        {
+
         }
 
         [TestCleanup]

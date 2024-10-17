@@ -21,10 +21,15 @@ namespace CodeYouFinalProject
         public void Login(string Admin)
         {
             NavigateToURL(_adminLocators.pageURL);
- //           _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            _adminLocators.UsernameTextBox.SendKeys(Admin);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            _adminLocators.UsernameTextBox.SendKeys("Admin");
             _adminLocators.PasswordTextBox.SendKeys("admin123");
             _adminLocators.LoginButton.Click();
         }
+        public void SearchAndEdit()
+        { 
+        }
+
+        public void Logout() { }
     }
 }

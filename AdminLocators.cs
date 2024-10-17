@@ -14,7 +14,7 @@ namespace CodeYouFinalProject
         public string pageURL = "https://opensource-demo.orangehrmlive.com/";
 
         public IWebElement UsernameTextBox => _driver.FindElement(By.ClassName("oxd-form"))
-            .FindElement(By.CssSelector("placeholder='Usernaame']"));
+            .FindElement(By.XPath("//input[@name='username']"));
         public IWebElement PasswordTextBox => _driver.FindElement(By.ClassName("oxd-form"))
             .FindElement(By.XPath("//input[@name='password']"));
         public IWebElement LoginButton => _driver.FindElement(By.ClassName("oxd-form"))

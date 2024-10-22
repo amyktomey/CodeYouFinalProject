@@ -26,10 +26,27 @@ namespace CodeYouFinalProject
             _adminLocators.PasswordTextBox.SendKeys("admin123");
             _adminLocators.LoginButton.Click();
         }
-        public void SearchAndEdit()
-        { 
+
+        public void AdminSearch()
+        {
+            _adminLocators.SelectAdminButton.Click();
+            _adminLocators.AdminInputUsername.SendKeys("FMLName");
+            _adminLocators.AdminClickSearchButton.Click();
+        }
+        public void AdminEditUser()
+        {
+  //          _adminLocators.AdminEditUserButton.Click();
+  //          _adminLocators.AdminInputUserChanges.SendKeys(" ");
+ //           _adminLocators.AdminSaveUserButton.Click();
         }
 
-        public void Logout() { }
+        public void AdminDeleteUser()
+        {
+ //           _adminLocators.AdminDeleteUserButton.Click();
+        }
+        public void Logout()
+        {
+        
+        }
     }
 }

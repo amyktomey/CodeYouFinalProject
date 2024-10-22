@@ -27,19 +27,14 @@ namespace CodeYouFinalProject
         }
 
         [TestMethod]
-        public void ClickAdminTab()
-        {
-
-        }
-        [TestMethod]
         public void AdminSearchForUser()
         {
-        
+         _adminSeleniumHelpers.AdminSearch();       
         }
         [TestMethod]
         public void AdminEditUser()
         {
-
+            _adminSeleniumHelpers.AdminSearch();
         }
         [TestMethod]
         public void AdminDeleteUser()

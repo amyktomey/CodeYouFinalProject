@@ -9,7 +9,7 @@ namespace CodeYouFinalProject
         public IWebDriver? _driver;
         public AdminLocators? _adminLocators;
         public AdminSeleniumHelpers? _adminSeleniumHelpers;
-
+        public MenuBarLocators? _menuBarLocators;
 
         [TestInitialize]
 
@@ -21,20 +21,14 @@ namespace CodeYouFinalProject
         }
 
         [TestMethod]
-        public void LoginToSite()
-        {
-            _adminSeleniumHelpers.Login("Admin");
-        }
+        public void LoginToSite() => _adminSeleniumHelpers.Login("Admin");
 
         [TestMethod]
-        public void AdminSearchForUser()
-        {
-         _adminSeleniumHelpers.AdminSearch();       
-        }
+        public void AdminSearchForUser() => _adminSeleniumHelpers.AdminSearchUser();
         [TestMethod]
         public void AdminEditUser()
         {
-            _adminSeleniumHelpers.AdminSearch();
+  //          _adminSeleniumHelpers.AdminSearch();
         }
         [TestMethod]
         public void AdminDeleteUser()

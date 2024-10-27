@@ -6,6 +6,7 @@ namespace CodeYouFinalProject
     {
         private IWebDriver _driver;
         public AdminLocators _adminLocators;
+        public MenuBarLocators _menuBarLocators;
 
         public AdminSeleniumHelpers(IWebDriver driver)
         {
@@ -27,11 +28,12 @@ namespace CodeYouFinalProject
             _adminLocators.LoginButton.Click();
         }
 
-        public void AdminSearch()
+        public void AdminSearchUser()
         {
-            _adminLocators.SelectAdminButton.Click();
-            _adminLocators.AdminInputUsername.SendKeys("FMLName");
-            _adminLocators.AdminClickSearchButton.Click();
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            _menuBarLocators.AdminTab.Click();
+            _adminLocators.SearchInputUsername.SendKeys("FMLName");
+            //          _adminLocators.AdminClickSearchButton.Click();
         }
         public void AdminEditUser()
         {

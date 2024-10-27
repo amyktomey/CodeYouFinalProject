@@ -20,8 +20,9 @@
     <PackageReference Include="NUnit" Version="4.2.2" />
     <PackageReference Include="Selenium.Support" Version="4.25.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.25.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="130.0.6723.5800" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="130.0.6723.6900" />
     <PackageReference Include="Selenium.WebDriverBackedSelenium" Version="4.1.0" />
+    <PackageReference Include="seleniumplus" Version="0.8.11" />
     <PackageReference Include="Sl.Selenium.Extensions.Chrome" Version="2.3.1" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>

@@ -1,15 +1,10 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.Linq;
-using static System.Net.WebRequestMethods;
 
 namespace CodeYouFinalProject
 {
     public class AdminLocators
     {
         private IWebDriver _driver;
-        private const string AdminTab = ("]/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a");
         
         public AdminLocators(IWebDriver driver)
         {
@@ -24,18 +19,10 @@ namespace CodeYouFinalProject
             .FindElement(By.XPath("//input[@name='password']"));
         public IWebElement LoginButton => _driver.FindElement(By.ClassName("oxd-form"))
             .FindElement(By.XPath("//button[@type='submit']"));
+        public IWebElement SystemUsersSearchToggle => _driver.FindElement(By.XPath
+            ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[1]/div[2]/div[3]/button/i"));
+        public IWebElement SearchInputUsername => _driver.FindElement(By.XPath
+            ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input"));
 
-        // *** good to here... 
-
-        public IWebElement SelectAdminButton => _driver.FindElement(By.ClassName("oxd-main-menu"))
-            .FindElement(By.XPath(AdminTab));
-
-        public IWebElement AdminInputUsername => _driver.FindElement(By.ClassName("oxd-form"))
-            .FindElement(By.XPath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input"));
-        
-            public IWebElement AdminClickSearchButton => _driver.FindElement(By.ClassName("oxd-form-actions"))
-            .FindElement(By.XPath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]"));
-
- //       public IWebElement AdminEditUserButton => 
     }
 }

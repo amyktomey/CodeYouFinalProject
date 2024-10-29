@@ -30,10 +30,9 @@ namespace CodeYouFinalProject
 
         public void AdminSearchUser()
         {
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            _menuBarLocators.AdminTab.Click();
-            _adminLocators.SearchInputUsername.SendKeys("FMLName");
-            //          _adminLocators.AdminClickSearchButton.Click();
+           _menuBarLocators.AdminTab.Click();
+  //          _adminLocators.SearchInputUsername.SendKeys("FMLName");
+  //          _adminLocators.AdminClickSearchButton.Click();
         }
         public void AdminEditUser()
         {

@@ -30,7 +30,7 @@ namespace CodeYouFinalProject
 
         public void AdminSearchUser()
         {
-           _menuBarLocators.AdminTab.Click();
+         //  _menuBarLocators.AdminTab.Click();
   //          _adminLocators.SearchInputUsername.SendKeys("FMLName");
   //          _adminLocators.AdminClickSearchButton.Click();
         }

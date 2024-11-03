@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -6,25 +7,36 @@ namespace CodeYouFinalProject
     [TestClass]
     public class UnitTest1
     {
-        public IWebDriver? _driver;
-        public AdminLocators? _adminLocators;
-        public AdminSeleniumHelpers? _adminSeleniumHelpers;
-        public MenuBarLocators? _menuBarLocators;
+        public IWebDriver _driver;
+        public _adminLocators _adminLocators;
+        public AdminSeleniumHelpers _adminSeleniumHelpers;
+        public MenuBarLocators _menuBarLocators;
 
         [TestInitialize]
 
         public void SetUp()
         {
             _driver = new ChromeDriver();
-            _adminLocators = new AdminLocators(_driver);
+            _adminLocators = new _adminLocators(_driver);
             _adminSeleniumHelpers = new AdminSeleniumHelpers(_driver);
+            _menuBarLocators = new MenuBarLocators(_driver);
         }
 
         [TestMethod]
-        public void LoginToSite() => _adminSeleniumHelpers.Login("Admin");
+        public void LoginToSite()
+        {
+            _adminSeleniumHelpers.Login("Admin");
+
+  //          NUnit.Framework.Assert.That(_adminLocators.UsernameTextBox, Is.EqualTo("Admin"));
+        }
 
         [TestMethod]
-        public void AdminSearchForUser() => _adminSeleniumHelpers.AdminSearchUser();
+
+        public void AdminSearchForUser()
+        {
+            _adminSeleniumHelpers.Login("Admin");
+            _adminSeleniumHelpers.AdminSearchUser();
+        }
         [TestMethod]
         public void AdminEditUser()
         {

@@ -2,11 +2,15 @@
 
 namespace CodeYouFinalProject
 {
-    public class AdminLocators
+    public class _adminLocators
     {
         private IWebDriver _driver;
-        
-        public AdminLocators(IWebDriver driver)
+        public string UsersTextBox = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input");
+        public string SearchResetButton = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[1]");
+        public string UsersSubmitButton = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]");
+
+
+        public _adminLocators(IWebDriver driver)
         {
             _driver = driver;
         }
@@ -19,10 +23,8 @@ namespace CodeYouFinalProject
             .FindElement(By.XPath("//input[@name='password']"));
         public IWebElement LoginButton => _driver.FindElement(By.ClassName("oxd-form"))
             .FindElement(By.XPath("//button[@type='submit']"));
-        //public IWebElement SystemUsersSearchToggle => _driver.FindElement(By.XPath
-        //    ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[1]/div[2]/div[3]/button/i"));
-        //public IWebElement SearchInputUsername => _driver.FindElement(By.XPath
-        //    ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input"));
-
+        public IWebElement SearchUsersTextBox => _driver.FindElement(By.XPath(UsersTextBox));
+        public IWebElement SearchResetInputButton => _driver.FindElement(By.XPath(SearchResetButton));
+        public IWebElement SearchUsersSubmitButton => _driver.FindElement(By.XPath(UsersSubmitButton));
     }
 }

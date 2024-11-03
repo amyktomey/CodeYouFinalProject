@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using Selenium.Extensions;
 
 namespace CodeYouFinalProject
 {
@@ -14,9 +13,9 @@ namespace CodeYouFinalProject
             _driver = driver;
         }
 
-        //        public IWebElement NAME-IT => _driver.FindElement(By.LOCATOR("description")).FindElement(By.LOCATOR("description"));
+ //        public IWebElement NAME-IT => _driver.FindElement(By.LOCATOR("description")).FindElement(By.LOCATOR("description"));
 
-        public IWebElement AdminTab => _driver.FindElement(By.Id("app")).FindElement(By.XPath(AdminTabXPath));
-        public IWebElement LeaveTab => _driver.FindElement(By.Id("app")).FindElement(By.XPath(LeaveTabXPath));
+        public IWebElement AdminTab => _driver.FindElement(By.XPath(AdminTabXPath));
+        public IWebElement LeaveTab => _driver.FindElement(By.XPath(LeaveTabXPath));
     }
 }

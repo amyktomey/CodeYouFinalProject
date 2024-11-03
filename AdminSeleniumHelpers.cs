@@ -5,13 +5,14 @@ namespace CodeYouFinalProject
     public class AdminSeleniumHelpers
     {
         private IWebDriver _driver;
-        public AdminLocators _adminLocators;
+        public _adminLocators _adminLocators;
         public MenuBarLocators _menuBarLocators;
 
         public AdminSeleniumHelpers(IWebDriver driver)
         {
             _driver = driver;
-            _adminLocators = new AdminLocators(_driver);
+            _adminLocators = new _adminLocators(_driver);
+            _menuBarLocators = new MenuBarLocators(_driver);
         }
 
         public void NavigateToURL(string url)
@@ -30,9 +31,11 @@ namespace CodeYouFinalProject
 
         public void AdminSearchUser()
         {
-         //  _menuBarLocators.AdminTab.Click();
-  //          _adminLocators.SearchInputUsername.SendKeys("FMLName");
-  //          _adminLocators.AdminClickSearchButton.Click();
+           _menuBarLocators.AdminTab.Click();
+           _adminLocators.SearchUsersTextBox.SendKeys("WrongName");
+           _adminLocators.SearchResetInputButton.Click();
+           _adminLocators.SearchUsersTextBox.SendKeys("FMLName");
+           _adminLocators.SearchUsersSubmitButton.Click();
         }
         public void AdminEditUser()
         {

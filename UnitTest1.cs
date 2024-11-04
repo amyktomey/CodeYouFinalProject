@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -8,26 +7,29 @@ namespace CodeYouFinalProject
     public class UnitTest1
     {
         public IWebDriver _driver;
-        public _adminLocators _adminLocators;
+        public AdminLocators _adminLocators;
         public AdminSeleniumHelpers _adminSeleniumHelpers;
         public MenuBarLocators _menuBarLocators;
+        public MyInfoLocators _myInfolocators;
+        private MyInfoSeleniumHeplers _myInfoSeleniumHelpers;
 
         [TestInitialize]
 
         public void SetUp()
         {
             _driver = new ChromeDriver();
-            _adminLocators = new _adminLocators(_driver);
+            _adminLocators = new AdminLocators(_driver);
             _adminSeleniumHelpers = new AdminSeleniumHelpers(_driver);
             _menuBarLocators = new MenuBarLocators(_driver);
+            _myInfolocators = new MyInfoLocators(_driver);
+            _myInfoSeleniumHelpers = new MyInfoSeleniumHeplers(_driver);
         }
 
-        [TestMethod]
+           [TestMethod]
         public void LoginToSite()
-        {
-            _adminSeleniumHelpers.Login("Admin");
-
-  //          NUnit.Framework.Assert.That(_adminLocators.UsernameTextBox, Is.EqualTo("Admin"));
+       {
+           _adminSeleniumHelpers.Login("Admin");
+ //      //     ******* Add a check for mismatch ... wrong input*******
         }
 
         [TestMethod]
@@ -51,6 +53,13 @@ namespace CodeYouFinalProject
         public void AdminAddNewAdmin()
         {
 
+        }
+        [TestMethod]
+        public void MyInfoChangeName()
+        {
+            _adminSeleniumHelpers.Login("Admin");
+            _menuBarLocators.MyInfoTab.Click();
+            _myInfoSeleniumHelpers.MyInfoChangeUsername();
         }
 
         [TestCleanup]

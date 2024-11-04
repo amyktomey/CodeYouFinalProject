@@ -2,7 +2,7 @@
 
 namespace CodeYouFinalProject
 {
-    public class _adminLocators
+    public class AdminLocators
     {
         private IWebDriver _driver;
         public string UsersTextBox = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input");
@@ -10,7 +10,7 @@ namespace CodeYouFinalProject
         public string UsersSubmitButton = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]");
 
 
-        public _adminLocators(IWebDriver driver)
+        public AdminLocators(IWebDriver driver)
         {
             _driver = driver;
         }
@@ -25,6 +25,6 @@ namespace CodeYouFinalProject
             .FindElement(By.XPath("//button[@type='submit']"));
         public IWebElement SearchUsersTextBox => _driver.FindElement(By.XPath(UsersTextBox));
         public IWebElement SearchResetInputButton => _driver.FindElement(By.XPath(SearchResetButton));
-        public IWebElement SearchUsersSubmitButton => _driver.FindElement(By.XPath(UsersSubmitButton));
+ //       public IWebElement SearchUsersSubmitButton => _driver.FindElement(By.XPath(UsersSubmitButton));
     }
 }

@@ -40,7 +40,7 @@ namespace CodeYouFinalProject
            _adminLocators.SearchUsersTextBox.SendKeys("WrongName");
            _adminLocators.SearchResetInputButton.Click();
            _adminLocators.SearchUsersTextBox.SendKeys("FMLName");
- //          _adminLocators.SearchUsersSubmitButton.Click();
+           _adminLocators.SearchUsersSubmitButton.Click();
         }
         public void AdminEditUser()
         {

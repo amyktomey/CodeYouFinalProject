@@ -25,6 +25,6 @@ namespace CodeYouFinalProject
             .FindElement(By.XPath("//button[@type='submit']"));
         public IWebElement SearchUsersTextBox => _driver.FindElement(By.XPath(UsersTextBox));
         public IWebElement SearchResetInputButton => _driver.FindElement(By.XPath(SearchResetButton));
- //       public IWebElement SearchUsersSubmitButton => _driver.FindElement(By.XPath(UsersSubmitButton));
+        public IWebElement SearchUsersSubmitButton => _driver.FindElement(By.XPath(UsersSubmitButton));
     }
 }

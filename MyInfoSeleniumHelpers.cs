@@ -28,4 +28,9 @@ public class MyInfoSeleniumHeplers
         _myInfoLocators.LastNameInputBox.SendKeys("Doe");
         _myInfoLocators.SaveDetailsButton.Click();
     }
+
+    public void MyInfoFileUpload()
+    { 
+    
+    }
 }

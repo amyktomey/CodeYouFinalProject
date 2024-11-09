@@ -54,7 +54,6 @@ namespace CodeYouFinalProject
         public void MyInfoChangeName()
         {
             _adminSeleniumHelpers.Login("Admin");
- //           _adminSeleniumHelpers.AdminSearchUser();
             _menuBarLocators.MyInfoTab.Click();
             _myInfoSeleniumHelpers.MyInfoChangeUsername();
         }

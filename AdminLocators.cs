@@ -5,10 +5,6 @@ namespace CodeYouFinalProject
     public class AdminLocators
     {
         private IWebDriver _driver;
-        public string UsersTextBox = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input");
-        public string SearchResetButton = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[1]");
-        public string UsersSubmitButton = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]");
-
 
         public AdminLocators(IWebDriver driver)
         {
@@ -23,8 +19,26 @@ namespace CodeYouFinalProject
             .FindElement(By.XPath("//input[@name='password']"));
         public IWebElement LoginButton => _driver.FindElement(By.ClassName("oxd-form"))
             .FindElement(By.XPath("//button[@type='submit']"));
-        public IWebElement SearchUsersTextBox => _driver.FindElement(By.XPath(UsersTextBox));
-        public IWebElement SearchResetInputButton => _driver.FindElement(By.XPath(SearchResetButton));
-        public IWebElement SearchUsersSubmitButton => _driver.FindElement(By.XPath(UsersSubmitButton));
+        public IWebElement SearchUsersTextBox => _driver.FindElement
+            (By.XPath("//div[@class='oxd-input-group oxd-input-field-bottom-space']" +
+                "//div//input[@class='oxd-input oxd-input--active']"));
+        public IWebElement SearchResetInputButton => _driver.FindElement
+            (By.XPath("//button[normalize-space()='Reset']"));
+        public IWebElement SearchUsersSubmitButton => _driver.FindElement
+            (By.XPath(("//button[normalize-space()='Search']")));
+
+        // *** EDIT USER PAGE LOCATORS ***
+
+        public IWebElement EditUserButton => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']]"));
+ //       public IWebElement InputUseRoleAdmin => _driver.FindElement(By.XPath("//div[contains(text(),'Admin')]"));   Select uiser role
+ //       public IWebElement InputUseRoleESS => _driver.FindElement(By.XPath("//div[contains(text(),'ESS')]"));
+        public IWebElement InputEmployeeName => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+ //       public IWebElement StatusEnabled => _driver.FindElement(By.XPath("//div[contains(text(),'Enabled')]"));
+ //       public IWebElement StatusDisabled=> _driver.FindElement(By.XPath("//div[contains(text(),'Enabled')]"));
+        public IWebElement InputUserName => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+        public IWebElement ChangePasswordCheckbox => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+        public IWebElement CancelChangesrButton => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+        public IWebElement SaveUserButton => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+
     }
 }

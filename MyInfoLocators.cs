@@ -6,18 +6,14 @@ namespace CodeYouFinalProject
     {
         private IWebDriver _driver;
 
-        public string PersonalDetailsTabXPath = ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[1]/a");
-        public string FullNameInputBoxXPath =  ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div/div/div[2]/div[1]/div[2]/input");
-        public string SaveDetailsButtonXPath =  ("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/form/div[2]/button");
-
-
-
         public MyInfoLocators(IWebDriver driver)
         {
             _driver = driver;
         }
-        public IWebElement PersonalDetailsTab => _driver.FindElement(By.XPath(PersonalDetailsTabXPath));
-        public IWebElement FullNameInputBox =>  _driver.FindElement(By.XPath(FullNameInputBoxXPath));
-         public IWebElement SaveDetailsButton =>  _driver.FindElement(By.XPath(SaveDetailsButtonXPath));
+  //      public IWebElement PersonalDetailsTab => _driver.FindElement(By.XPath("//a[@class='orangehrm-tabs-item --active']//button[normalize-space()='Personal Details']"));
+        public IWebElement FirstNameInputBox => _driver.FindElement(By.XPath("//input[@placeholder='First Name']"));
+        public IWebElement LastNameInputBox => _driver.FindElement(By.XPath("//input[@placeholder='Middle Name']"));
+        public IWebElement SaveDetailsButton => _driver.FindElement(By.XPath
+            ("//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']//button[@type='submit'][normalize-space()='Save']"));
     }
 }

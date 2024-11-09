@@ -18,9 +18,14 @@ public class MyInfoSeleniumHeplers
     }
     public void MyInfoChangeUsername()
     {
-        _myInfoLocators.PersonalDetailsTab.Click();
-        _myInfoLocators.FullNameInputBox.Clear();
-        _myInfoLocators.FullNameInputBox.SendKeys("Jane Doe");
+
+//        _myInfoLocators.PersonalDetailsTab.Click();
+        _myInfoLocators.FirstNameInputBox.Clear();
+
+        _myInfoLocators.FirstNameInputBox.SendKeys("Jane");
+        _myInfoLocators.LastNameInputBox.Clear();
+
+        _myInfoLocators.LastNameInputBox.SendKeys("Doe");
         _myInfoLocators.SaveDetailsButton.Click();
     }
 }

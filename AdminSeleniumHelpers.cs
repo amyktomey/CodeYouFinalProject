@@ -8,7 +8,7 @@ namespace CodeYouFinalProject
         public AdminLocators _adminLocators;
         public MenuBarLocators _menuBarLocators;
         public MyInfoLocators _myInfolocators;
-       public MyInfoSeleniumHeplers _myInfoSeleniumHelpers;
+        public MyInfoSeleniumHeplers _myInfoSeleniumHelpers;
 
         public AdminSeleniumHelpers(IWebDriver driver)
         {
@@ -44,10 +44,47 @@ namespace CodeYouFinalProject
         }
         public void AdminEditUser()
         {
-  //          _adminLocators.AdminEditUserButton.Click();
-  //          _adminLocators.AdminInputUserChanges.SendKeys(" ");
+            _menuBarLocators.AdminTab.Click();
+            _adminLocators.SearchUsersTextBox.SendKeys("FMLName");
+            _adminLocators.SearchUsersSubmitButton.Click();
+            _adminLocators.EditUserButton.Click();  // *** //div[4]//div[1]//div[6]//div[1]//button[2]//i[1]
+  //          _adminLocators.SelectUserRole.Click():
+ //           _adminLocators.AdminInputUserChanges.SendKeys(" ");
  //           _adminLocators.AdminSaveUserButton.Click();
         }
+
+        //public void AdminDeleteUser()
+        //{
+        //    _menuBarLocators.AdminTab.Click();
+        //    _adminLocators.SearchUsersTextBox.SendKeys("FMLName");
+        //    _adminLocators.SearchUsersSubmitButton.Click();
+        //}
+
+        public void AdminNewUse()
+        {
+            _menuBarLocators.AdminTab.Click();
+
+        }
+
+
+        public IWebElement EditUserButton => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']]"));
+        public IWebElement InputUseRoleAdmin => _driver.FindElement(By.XPath("//div[contains(text(),'Admin')]"));
+        public IWebElement InputUseRoleESS => _driver.FindElement(By.XPath("//div[contains(text(),'ESS')]"));
+        public IWebElement InputEmployeeName => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+        public IWebElement StatusEnabled => _driver.FindElement(By.XPath("//div[contains(text(),'Enabled')]"));
+        public IWebElement StatusDisabled => _driver.FindElement(By.XPath("//div[contains(text(),'Enabled')]"));
+        public IWebElement InputUserName => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+        public IWebElement ChangePasswordCheckbox => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+        public IWebElement CancelChangesrButton => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+        public IWebElement SaveUserButton => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']"));
+
+
+
+
+
+
+
+
 
         public void AdminDeleteUser()
         {

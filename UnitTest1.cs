@@ -29,17 +29,17 @@ namespace CodeYouFinalProject
         public void LoginToSite()
        {
            _adminSeleniumHelpers.Login("Admin");
- //      //     ******* Add a check for mismatch ... wrong input*******
+ //      //     ******* Assert for mismatch ... wrong input negative FAIL pass*******
         }
 
         [TestMethod]
-        public void AdminUserManagement()
+        public void AdminEditOrDeleteUser()
         {
             _adminSeleniumHelpers.Login("Admin");
             _adminSeleniumHelpers.AdminSearchUser();
             _adminSeleniumHelpers.AdminEditUser();
             _adminSeleniumHelpers.AdminSearchUser();
-  //          _adminSeleniumHelpers.AdminDeleteUser();
+            _adminSeleniumHelpers.AdminDeleteUser();
             _adminSeleniumHelpers.AdminSearchUser();
         }
 
@@ -47,6 +47,9 @@ namespace CodeYouFinalProject
         public void AdminAddNewAdmin()
         {
             _adminSeleniumHelpers.Login("Admin");
+            _adminSeleniumHelpers.AdminNewUser();
+            _adminSeleniumHelpers.AdminPasswordReset();
+            _adminSeleniumHelpers.AdminVerifyWorkingPassword();
 
 
         }
@@ -56,6 +59,11 @@ namespace CodeYouFinalProject
             _adminSeleniumHelpers.Login("Admin");
             _menuBarLocators.MyInfoTab.Click();
             _myInfoSeleniumHelpers.MyInfoChangeUsername();
+        }
+        [TestMethod]
+        public void LogOut()
+        {
+            _adminSeleniumHelpers.LogOutOfSite();
         }
 
         [TestCleanup]

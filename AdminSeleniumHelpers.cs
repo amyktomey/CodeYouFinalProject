@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CodeYouFinalProject
 {
@@ -17,7 +18,7 @@ namespace CodeYouFinalProject
             _menuBarLocators = new MenuBarLocators(_driver);
             _myInfolocators = new MyInfoLocators(_driver);
             _myInfolocators = new MyInfoLocators(_driver);
-           _myInfoSeleniumHelpers = new MyInfoSeleniumHeplers(_driver);
+            _myInfoSeleniumHelpers = new MyInfoSeleniumHeplers(_driver);
         }
 
         public void NavigateToURL(string url)
@@ -47,32 +48,45 @@ namespace CodeYouFinalProject
             _menuBarLocators.AdminTab.Click();
             _adminLocators.SearchUsersTextBox.SendKeys("FMLName");
             _adminLocators.SearchUsersSubmitButton.Click();
-            _adminLocators.EditUserButton.Click();  // *** //div[4]//div[1]//div[6]//div[1]//button[2]//i[1]
-  //          _adminLocators.SelectUserRole.Click():
- //           _adminLocators.AdminInputUserChanges.SendKeys(" ");
- //           _adminLocators.AdminSaveUserButton.Click();
+            _adminLocators.EditUserButton.Click();
+            _adminLocators.SearchUsersTextBox.SendKeys("Jane Doe");
         }
 
-        //public void AdminDeleteUser()
-        //{
-        //    _menuBarLocators.AdminTab.Click();
-        //    _adminLocators.SearchUsersTextBox.SendKeys("FMLName");
-        //    _adminLocators.SearchUsersSubmitButton.Click();
-        //}
+        public void AdminDeleteUser()
+        { 
+            _menuBarLocators.AdminTab.Click();
+            _adminLocators.SearchUsersTextBox.SendKeys("Jane Doe");
+            _adminLocators.SearchUsersSubmitButton.Click();
+            _adminLocators.DeleteUserButton.Click();
+        }
 
-        public void AdminNewUse()
+        public void AdminNewUser()
         {
             _menuBarLocators.AdminTab.Click();
-
+            _adminLocators.AddNewUserButton.Click();
+            _adminLocators.SelectAdminForRole.Click();
+            _adminLocators.InputUserrname.SendKeys("DouubleOh7");
+            _adminLocators.InputEmployeeName.SendKeys("Jane Dough");
+            _adminLocators.EnableUser.Click();
         }
-        public void AdminDeleteUser()
+        public void AdminPasswordReset()
         {
- //           _adminLocators.AdminDeleteUserButton.Click();
+            _adminLocators.InputNewPassword.SendKeys("Pa$$w0rd");
+            _adminLocators.ConfirmPassword.SendKeys("Pa$$w0rd");
         }
 
-        public void Logout()
+        public void AdminVerifyWorkingPassword()
         {
-        
+            NavigateToURL(_adminLocators.pageURL);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            _adminLocators.UsernameTextBox.SendKeys("DouubleOh7");
+            _adminLocators.PasswordTextBox.SendKeys("Pa$$w0rd");
+            _adminLocators.LoginButton.Click();
+        }
+
+        public void LogOutOfSite()
+        {
+            _adminLocators.LogOut.Click();
         }
     }
 }

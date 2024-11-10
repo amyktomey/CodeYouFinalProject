@@ -26,6 +26,27 @@ namespace CodeYouFinalProject
             (By.XPath("//button[normalize-space()='Reset']"));
         public IWebElement SearchUsersSubmitButton => _driver.FindElement
             (By.XPath(("//button[normalize-space()='Search']")));
-        public IWebElement EditUserButton => _driver.FindElement(By.XPath("//div[@class='oxd-topbar-header']]"));
+        public IWebElement DeleteUserButton => _driver.FindElement(By.XPath("/i[@class ='oxd-icon bi-trash']"));
+        // go to Admin Add User page
+        public IWebElement EditUserButton => _driver.FindElement(By.XPath("//i[@class ='oxd-icon bi-pencil-fill']"));
+        public IWebElement AddNewUserButton => _driver.FindElement(By.XPath("//button[normalize-space()='Add']"));
+        public IWebElement SelectAdminForRole => _driver.FindElement(By.XPath("//div[@class='oxd-grid-item oxd-grid-item--gutters user-password-cell']" +
+             "//button[normalize-space()='Admin']"));  
+        public IWebElement SelectESSForRole => _driver.FindElement(By.XPath("//div[@class='oxd-grid-item oxd-grid-item--gutters user-password-cell']" +
+             "//button[normalize-space()='ESS']"));
+        public IWebElement InputEmployeeName => _driver.FindElement(By.XPath("//div[@class='oxd-autocomplete-text-input--after']"));
+        public IWebElement DisableUser => _driver.FindElement(By.XPath("//div[@class = 'oxd-select-text oxf-select-text--active']" +
+            "//button[normalize-space()='Disabled']\""));
+        public IWebElement EnableUser => _driver.FindElement(By.XPath("//div[@class = 'oxd-select-text oxf-select-text--active']" +
+             "//button[normalize-space()='Enabled']\""));
+        public IWebElement InputUserrname => _driver.FindElement(By.XPath("//input[@placeholder='Type for hints...']"));
+
+        public IWebElement InputNewPassword => _driver.FindElement(By.XPath("//input[normalize-space()='Passwordl']"));
+        public IWebElement ConfirmPassword => _driver.FindElement(By.XPath("//input[@class='oxd-input oxd-input--active']"));
+        public IWebElement CancelUserSaveButton => _driver.FindElement(By.XPath("//button[normalize-space()='Cancel']"));
+        public IWebElement AddUserSaveButton => _driver.FindElement(By.XPath("//button[normalize-space()='Save']"));
+
+     
+        public IWebElement LogOut => _driver.FindElement(By.XPath("//a[normalize-space()='Logout']"));
     }
-}
+} 

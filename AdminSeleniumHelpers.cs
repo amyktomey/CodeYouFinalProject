@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CodeYouFinalProject
 {

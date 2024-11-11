@@ -16,7 +16,7 @@ namespace CodeYouFinalProject
             "//button[normalize-space()='CAN - FMLA']"));
         // data picker here
         public IWebElement SubmitLeaveButton => _driver.FindElement(By.XPath("//button[normalize-space()=Apply']"));
-        public IWebElement MyLeaveButton => _driver.FindElement(By.XPath("//a[@class = 'oxd-topbar-body-nav-item']" +
+        public IWebElement MyLeaveButton => _driver.FindElement(By.XPath("//a[@class = 'oxd-brand toggled']" +
             "//button[normalize-space()='My Leave']"));
         public IWebElement MyLeaveListButton => _driver.FindElement(By.XPath("//i[@class = 'oxd-icon bi-caret-up-fill']"));
     }
